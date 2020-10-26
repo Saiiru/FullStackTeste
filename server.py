@@ -14,7 +14,7 @@ def index():
         for row in data:
             if not first_line:
                 lanches.append({
-                    "identificador": row[0],
+                    "Identificador": row[0],
                     "nome_usuario": row[1],
                     "altura": row[2],
                     "lactose": row[3],

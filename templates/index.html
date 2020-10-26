@@ -6,26 +6,33 @@
     <link rel="stylesheet" type="text/css" href="static/style.css" />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
   </head>
   <body>
     <div>
-      <table id="table" class="display" style="width: 100%">
+
+      <table
+        id="filter"
+        class="table table-bordered table-dark table-hover"
+        style="width: 100%"
+      >
         <thead>
           <tr>
-            <th>Nome</th>
-            <th>Alturae</th>
-            <th>Intolerante a lactose</th>
-            <th>peso</th>
-            <th>atleta</th>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Altura</th>
+            <th scope="col">Intolerante a lactose</th>
+            <th scope="col">peso</th>
+            <th scope="col">atleta</th>
           </tr>
         </thead>
         <tbody>
           {% for lanches in lanches %}
           <tr>
+            <th scope="row">{{lanches.Identificador}}</th>
             <td>{{ lanches.nome_usuario }}</td>
             <td>{{ lanches.altura }}</td>
             <td>
@@ -38,10 +45,11 @@
               {% if '1' in lanches.atleta %} {{ "true" }}{%- else
               %}{{"false"}}{% endif %}
             </td>
-          </tr>
+          </trt>
           {% endfor %}
         </tbody>
       </table>
     </div>
+
   </body>
 </html>
