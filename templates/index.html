@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lanches</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div>
+      <table id="table" class="display" style="width: 100%">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Alturae</th>
+            <th>Intolerante a lactose</th>
+            <th>peso</th>
+            <th>atleta</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for lanches in lanches %}
+          <tr>
+            <td>{{ lanches.nome_usuario }}</td>
+            <td>{{ lanches.altura }}</td>
+            <td>
+              {% if '1' in lanches.lactose %} {{ "true" }}{%- else
+              %}{{"false"}}{% endif %}
+            </td>
+
+            <td>{{ lanches.peso }}</td>
+            <td>
+              {% if '1' in lanches.atleta %} {{ "true" }}{%- else
+              %}{{"false"}}{% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
